@@ -14,9 +14,12 @@ const fulltext = () => {
         Axios.get(apiUrl() + "archive/singlefull/" + 1).then((response) => {
             setArchive(response.data[0]);
         });
-        console.log(archive);
     }, []);
-
+    setTimeout(() => {
+        var currentView = parseInt(archive.views) + 1;
+        Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
+        });
+    }, 5000);
   return (
     <>
         <div>
@@ -36,7 +39,7 @@ const fulltext = () => {
                 <span className='inpresstxtsiz'>
                 <hr></hr>
                     <h6>Article Information</h6>
-                    <p>Received Date: {archive.received_date}</p>
+                    <p>Received Date: {archive.received_date2}</p>
                     <p>Revised Date: {archive.revised_date}</p>
                     <p>Accepted Date: {archive.accepted_date}</p>
                     <p>Available online {archive.available_online_date}</p>
