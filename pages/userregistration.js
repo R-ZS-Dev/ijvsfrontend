@@ -14,21 +14,21 @@ const userregistration = () => {
     const [city_name, setcity_name] = useState("");
     const [country_name, setcountry_name] = useState("");
 
-    const addUsersignin =() => {
+    const addUsersignin = () => {
         Axios.post("http://localhost:3002/createreguser", {
-           first_name: first_name,
-           last_name: last_name,
-           ph_num: ph_num,
-           email: email,
-           password: password,
-           user_address: user_address,
-           city_name: city_name,
-           country_name: country_name,
+            first_name: first_name,
+            last_name: last_name,
+            ph_num: ph_num,
+            email: email,
+            password: password,
+            user_address: user_address,
+            city_name: city_name,
+            country_name: country_name,
         }).then(() => {
             console.log("success");
         });
     };
-    
+
     return (
         <>
             <div>
@@ -41,27 +41,27 @@ const userregistration = () => {
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor=''>First Name</label>
-                                <input type="text" onChange={(event) => {setfirst_name(event.target.value);}} className="form-control" placeholder="First Name" />
+                                <input type="text" onChange={(event) => { setfirst_name(event.target.value); }} className="form-control" placeholder="First Name" />
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor=''>Last Name</label>
-                                <input type="text" onChange={(event) => {setlast_name(event.target.value);}} className="form-control" placeholder="Last Name" />
+                                <input type="text" onChange={(event) => { setlast_name(event.target.value); }} className="form-control" placeholder="Last Name" />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor=''>Phone Number</label>
-                                <input type="text" onChange={(event) => {setph_num(event.target.value);}} className="form-control" placeholder="Phone Number" />
+                                <input type="text" onChange={(event) => { setph_num(event.target.value); }} className="form-control" placeholder="Phone Number" />
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor=''>Email</label>
-                                <input type="text" onChange={(event) => {setemail(event.target.value);}} className="form-control" placeholder="Enter Email" />
+                                <input type="text" onChange={(event) => { setemail(event.target.value); }} className="form-control" placeholder="Enter Email" />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor=''>Password</label>
-                                <input type="Password" onChange={(event) => {setpassword(event.target.value);}} className="form-control" placeholder="Password" />
+                                <input type="Password" onChange={(event) => { setpassword(event.target.value); }} className="form-control" placeholder="Password" />
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor=''>Confirm Password</label>
@@ -70,16 +70,16 @@ const userregistration = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor=''>Address</label>
-                            <input type="text" onChange={(event) => {setuser_address(event.target.value);}} className="form-control" placeholder="1234 Main St" />
+                            <input type="text" onChange={(event) => { setuser_address(event.target.value); }} className="form-control" placeholder="1234 Main St" />
                         </div>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor=''>City Name</label>
-                                <input type="text" onChange={(event) => {setcity_name(event.target.value);}} className="form-control" />
+                                <input type="text" onChange={(event) => { setcity_name(event.target.value); }} className="form-control" />
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor=''>Country Name</label>
-                                <input type="text" onChange={(event) => {setcountry_name(event.target.value);}} className="form-control" placeholder="Country Name" />
+                                <input type="text" onChange={(event) => { setcountry_name(event.target.value); }} className="form-control" placeholder="Country Name" />
                             </div>
                         </div>
                         <button onClick={addUsersignin} type="submit" className="btn btn-primary">Sign in</button>

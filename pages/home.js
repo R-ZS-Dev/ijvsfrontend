@@ -57,7 +57,7 @@ const HeroSlider = () => {
                 <div>
                     <h1 className="h3fontsiz text-center">Our Recent Articles</h1>
                     <hr className="hrbgline"></hr>
-                    {homeList.map((val,i) => (
+                    {homeList.map((val, i) => (
                         <div className="ourarticle p-1" key={i}>
                             <Link href={"/./upload/" + val.pdf_file} target="_blank"><a>
                                 <strong className="text-dark">{val.article_title}</strong>
