@@ -42,7 +42,7 @@ const archivevolumeview = () => {
                             <span className=''>
                                 <Link className='' href={'/archiveabstract/' + a.id}><a><button className='btn btn-info m-2'>Abstact</button></a></Link>
                                 <Link className='' href={'/archivefulltext/' + a.id}><a><button className='btn btn-info m-2'>Full Text</button></a></Link>
-                                <Link className='' href={imgUrl()+ a.pdf_file}><a><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>PDF</button></a></Link>
+                                <Link className='' href={imgUrl() + a.pdf_file}><a><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>PDF</button></a></Link>
                                 <Link className='' href={'/archivefigure/' + a.id}><a><button className='btn btn-info m-2'>Figures</button></a></Link>
                                 <Link className='' href={"/./upload/" + a.epub_file}><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>ePUB File</button></Link>
                                 <Link className='' href={"/./upload/" + a.flip_file}><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>Flip File</button></Link>

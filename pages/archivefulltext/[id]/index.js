@@ -8,7 +8,6 @@ import Axios from "axios";
 import { apiUrl } from "../../../baseurl";
 
 const fulltext = () => {
-
     const [archive, setArchive] = useState({});
     const [departments, setDepartment] = useState([]);
     const [reference, setReference] = useState([]);

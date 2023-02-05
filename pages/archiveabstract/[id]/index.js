@@ -12,7 +12,6 @@ const archiveabstract = () => {
         Axios.get(apiUrl() + "archive/single/" + 1).then((response) => {
             setArchive(response.data[0]);
             setDepartment(response.data[0].departments.split("-"));
-
         });
     }, []);
 
