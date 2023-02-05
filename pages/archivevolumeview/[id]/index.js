@@ -6,7 +6,7 @@ import RightMenu from '../../../components/RightSide';
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import Axios from "axios";
-import { apiUrl } from "../../../baseurl";
+import { apiUrl, imgUrl } from "../../../baseurl";
 
 const archivevolumeview = () => {
     const [archive, setArchive] = useState([{ volumeNo: 'Volume 1', yearNo: '2023' }]);
@@ -42,10 +42,10 @@ const archivevolumeview = () => {
                             <span className=''>
                                 <Link className='' href={'/archiveabstract/' + a.id}><a><button className='btn btn-info m-2'>Abstact</button></a></Link>
                                 <Link className='' href={'/archivefulltext/' + a.id}><a><button className='btn btn-info m-2'>Full Text</button></a></Link>
-                                <Link className='' href={"/./upload/" + a.pdf_file}><a><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>PDF</button></a></Link>
+                                <Link className='' href={imgUrl()+ a.pdf_file}><a><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>PDF</button></a></Link>
                                 <Link className='' href={'/archivefigure/' + a.id}><a><button className='btn btn-info m-2'>Figures</button></a></Link>
-                                <Link className='' href={"/./upload/ + a.epub_file" + a.id}><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>ePUB File</button></Link>
-                                <Link className='' href={"/./upload/ + a.flip_file" + a.id}><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>Flip File</button></Link>
+                                <Link className='' href={"/./upload/" + a.epub_file}><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>ePUB File</button></Link>
+                                <Link className='' href={"/./upload/" + a.flip_file}><button className='btn btn-info m-2' onClick={() => downloadFIle(i, a.id)}>Flip File</button></Link>
                             </span>
                         </div>
                     ))}

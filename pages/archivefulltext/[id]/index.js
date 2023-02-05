@@ -10,9 +10,13 @@ import { apiUrl } from "../../../baseurl";
 const fulltext = () => {
 
     const [archive, setArchive] = useState({});
+    const [departments, setDepartment] = useState([]);
+    const [reference, setReference] = useState([]);
     useEffect(() => {
         Axios.get(apiUrl() + "archive/singlefull/" + 1).then((response) => {
             setArchive(response.data[0]);
+            setDepartment(response.data[0].departments.split("-"));
+            setReference(response.data[0].reference.split("---"));
         });
     }, []);
     setTimeout(() => {
@@ -30,7 +34,11 @@ const fulltext = () => {
                 <h1 className='h1fontsiz'>{archive.article_title}</h1>
                 <h2 className='h2fontsiz'>{archive.all_authors}</h2>
                 <h3 className='h3fontsiz'> 
-                    <span className='shorttextdepts'></span>{archive.departments}.                     
+                    <span className='shorttextdepts'></span>
+                    {departments.map((val, i) => (
+                            <div key={i}><sup>{++i}</sup>{val}</div>
+                        ))}
+                    {/* {archive.departments}.                      */}
                 </h3>
                 <span className='inpresstxtsiz'>
                     <b>Abstract</b>
@@ -40,9 +48,9 @@ const fulltext = () => {
                 <hr></hr>
                     <h6>Article Information</h6>
                     <p>Received Date: {archive.received_date2}</p>
-                    <p>Revised Date: {archive.revised_date}</p>
-                    <p>Accepted Date: {archive.accepted_date}</p>
-                    <p>Available online {archive.available_online_date}</p>
+                    <p>Revised Date: {archive.revised_date2}</p>
+                    <p>Accepted Date: {archive.accepted_date2}</p>
+                    <p>Available online {archive.available_online_date2}</p>
                     <p><b>Authors Contribution </b>
                         {archive.contribution_authors_text}
                     </p>
@@ -110,7 +118,10 @@ const fulltext = () => {
                 <span className='inpresstxtsiz'>
                     <div className='text-center'><b>REFERENCES</b></div>                    
                     <div className='text-justify'>
-                        {archive.reference}
+                    {reference.map((val) => (
+                            <div>{val}</div>
+                        ))}
+                        {/* {archive.reference} */}
                     </div>
                 </span>
                 <h1 className='h1fontsiz'>{archive.article_title}</h1>

@@ -1,18 +1,11 @@
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
 import FooterOne from '../components/Footer'
 import NavOne from '../components/NavBar'
 import RightMenu from '../components/RightSide'
 import Axios from "axios";
 import { apiUrl } from "../baseurl";
 
-const archive = () => {
-    const [archive, setArchive] = useState([]);
-    useEffect(() => {
-        Axios.get(apiUrl() + "yearVolume/view").then((response) => {
-            setArchive(response.data);
-        });
-    }, []);
+const archive = ({archive}) => {
   return (
     <>
         <div>
@@ -54,5 +47,11 @@ const archive = () => {
     </>
   )
 }
+
+export async function getServerSideProps() {
+    const res = await fetch(apiUrl() + "yearVolume/view")
+    const archive = await res.json();
+    return { props: { archive } }
+  }
 
 export default archive

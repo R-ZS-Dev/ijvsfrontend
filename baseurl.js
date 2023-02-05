@@ -3,7 +3,12 @@ function apiUrl(){
 }
 
 
+function imgUrl(){
+    return "http://localhost/ijvs_admin/upload/";
+}
 
-export  {apiUrl};
+
+
+export  {apiUrl,imgUrl};
 
 // export {apiUrl,imgurl};

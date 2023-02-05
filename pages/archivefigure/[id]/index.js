@@ -19,17 +19,16 @@ const archivefigure = () => {
                 < NavOne />
             </div>
             <div className='row p-4'>
+                <div className='col-lg-9'>
                 {archive.map((val, i) => (
                     <div className='col-lg-9'>
-                        <h1 className='h1fontsiz'>Title</h1>
-                        <h5>Authors</h5>
-                        <h6>Departments</h6>
-                        <p>*Corresponding author: </p>
-                        <div>
-                            <Image src={'/upload/'+val.fig_img}  height={'50px'} width={'150px'} alt="Figure"/>
+                        <div className='text-center mt-3'>
+                            <Image src={'/upload/'+val.fig_img}  height={'300px'} width={'500px'} alt="Figure"/>
+                            <div>{val.fig_text}</div>
                         </div>
                     </div>
                 ))}
+                </div>
 
                 <div className='col-lg-3'>
                     < Htmltextright />

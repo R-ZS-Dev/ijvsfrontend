@@ -40,9 +40,9 @@ const Htmltextright = () => {
                                         <li onClick={downloadFIle}><Image src={'/images/uploadsite/pdficon.png'} alt='PDF Icon' height="20" width={"20"} />
                                             <Link href={'/upload/' + archive.pdf_file}  >Full Text PDF</Link></li>
                                         <li onClick={downloadFIle}><Image src={'/images/uploadsite/epubicon.png'} alt='Epub Icon' height="20" width={"20"} />
-                                            <Link href={'/tesing'} >Full Text ePub</Link></li>
+                                            <Link href={'/upload/' + archive.epub_file} >Full Text ePub</Link></li>
                                         <li onClick={downloadFIle}><Image src={'/images/uploadsite/htmltexticon.png'} alt='HTML Text Icon' height="20" width={"20"} />
-                                            <Link href={'/testing'}>Full Text Flip File</Link></li>
+                                            <Link href={'/upload/' + archive.flip_file}>Full Text Flip File</Link></li>
                                     </ul>
                                     {/* ))} */}
                                 </div>
