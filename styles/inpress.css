@@ -1,0 +1,47 @@
+.inpressarticle{
+    border: 1px solid rgb(218, 210, 210);
+}
+.h3fontsiz{
+    font-size: 26px;
+}
+.h2fontsiz{
+    font-size: 30px;
+}
+.h1fontsiz{
+    font-size: 36px;
+}
+.topinpresshead{
+    font-size: 20px;
+}
+.inpresstxtsiz{
+    font-size: 14px;
+}
+
+/* Archive */
+
+.shorttextdepts{
+    font-size: 58%;
+    vertical-align: super;
+}
+
+.articlintofirstword{
+    float: left;
+    font-size: 2.812em;
+    line-height: 1;
+    margin-bottom: -0.216em;
+    margin-right: 0.05em;
+    margin-top: -0.119em;
+}
+
+.mntbg{
+    height: 35px;
+    width: 230px;
+    background-color: beige;
+    margin: 5px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+/* Top Cited Articles page */
+
+
