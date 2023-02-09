@@ -1,10 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import FooterOne from '../components/Footer'
 import NavOne from '../components/NavBar'
 import RightMenu from '../components/RightSide'
 import Link from 'next/link'
+import Axios from "axios";
+import { apiUrl } from "../baseurl";
 
 function submission() {
+    const [Login, setLogin] = useState({email: "",password:""});
+    function formHandle(e){
+        setLogin({...Login, [e.target.name]: e.target.value});
+    }
+    function loginBtn (){
+        const res = Axios.post(apiUrl() + "userLogin/login",{
+            email: Login.email,
+            password: Login.password
+        }).then(r => {
+            if(r.data.message){
+                localStorage.setItem('loginId', r.data.loginid);
+                window.location='article-sub-form';
+            }else{
+                alert("Invalid login");
+            }
+        });
+    }
     return (
         <>
             <div>
@@ -35,15 +54,15 @@ function submission() {
                                         <div className="col-lg-6 mx-auto">
                                             <div className="auth-form-light text-left py-5 px-4 px-sm-5">
                                                 <h6 className="font-weight-light">Sign in to continue.</h6>
-                                                <form className="pt-3" action='' method='POST'>
+                                                {/* <form className="pt-3" action='' method='POST'> */}
                                                     <div className="form-group">
-                                                        <input type="email" className="form-control form-control-lg" placeholder="Enter Email" />
+                                                        <input type="email" name="email" onChange={formHandle} className="form-control form-control-lg" placeholder="Enter Email" />
                                                     </div>
                                                     <div className="form-group">
-                                                        <input type="password" className="form-control form-control-lg" placeholder="Password" />
+                                                        <input type="password" name="password" onChange={formHandle} className="form-control form-control-lg" placeholder="Password" />
                                                     </div>
                                                     <div className="mt-3">
-                                                        <a className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="article-sub-form">SIGN IN</a>
+                                                        <button  className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" onClick={loginBtn} >SIGN IN</button>
                                                     </div>
                                                     <div className="my-2 d-flex justify-content-between align-items-center">
                                                         <a href="userforpass" className="auth-link text-black">Forgot password?</a>
@@ -51,7 +70,7 @@ function submission() {
                                                     <div className="text-center mt-4 font-weight-light">
                                                         Dont have an account? <a href="userregistration" className="text-primary">Create</a>
                                                     </div>
-                                                </form>
+                                                {/* </form> */}
                                             </div>
                                         </div>
                                     </div>

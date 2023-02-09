@@ -25,10 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/archive": [
+    "/article-sub-form": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/archive.js"
+      "static/chunks/pages/article-sub-form.js"
     ]
   },
   "ampFirstPages": []
