@@ -28,7 +28,7 @@ const authors_guide = () => {
                             <input type="checkbox" id="trigger" />
                             <label className='colpsedown' htmlFor="trigger">Scope of the Journal</label>
                             <div><strong>
-                                International Journal of Veterinary Science (<Link href={'https://www.ijvets.com/'}><a>https://www.ijvets.com/</a></Link>) is quarterly (published
+                                International Journal of Veterinary Science (<Link href={'https://www.ijvets.com/'}><span>https://www.ijvets.com/</span></Link>) is quarterly (published
                                 on 15th of January, April, July and October) publication of the Unique Scientific Publishers
                                 that publishes original research papers, review articles, clinical articles/case reports and
                                 short communications in the field of Veterinary Medicine/Animal Production covering pre-clinical
@@ -44,7 +44,7 @@ const authors_guide = () => {
                                 Only those manuscripts are considered for publication in the IJVS, the contents of which
                                 have not been published and are not being considered for publication in any other journal
                                 and prepared keeping all the Ethical guidelines suggested by the
-                                <Link href={'https://publicationethics.org/'}><a> Committee on Publication Ethics</a></Link>.
+                                <Link href={'https://publicationethics.org/'}><span> Committee on Publication Ethics</span></Link>.
                                 It is assumed that all named authors agree with the contents and form of the manuscript
                                 and are responsible for the validity and originality of data presented in the manuscript.</strong>
                             </div>
@@ -63,12 +63,12 @@ const authors_guide = () => {
                             <label className='colpsedown' htmlFor="trigger3">Ethical Guidelines for IJVS Publications</label>
                             <div><strong>
                                 These guidelines are developed keeping the standards defined by the
-                                <Link href={'https://publicationethics.org/'}><a> Committee on Publication Ethics (COPE)</a></Link>.
+                                <Link href={'https://publicationethics.org/'}><span> Committee on Publication Ethics (COPE)</span></Link>.
                                 The management of the IJVS is committed to maintain a high academic standard. The IJVS is
                                 unbiased to any religious, nationality and ideological issue. It is purely research-based
                                 publication. Thus, we are committed to maintain a high ethical standard and be impartial to
                                 anyone. We abide by the code of conduct and international standards as given by the
-                                <Link href={'https://publicationethics.org/'}><a> COPE</a></Link>. Any behavior contrary to
+                                <Link href={'https://publicationethics.org/'}><span> COPE</span></Link>. Any behavior contrary to
                                 this ethics including plagiarism are unacceptable; the manuscript will be removed from our
                                 website and the employer of the author(s) will be asked for strict action against such person(s).
                                 Thus, it is the responsibility of the author(s) to ensure that their submitted work does not
@@ -110,10 +110,10 @@ const authors_guide = () => {
                             <div><strong>
                                 In scientific publications, each journal must follow publication ethics in letter and spirit,
                                 similarity, the IJVS is following the best practice guidance of the
-                                <Link href={'https://publicationethics.org/'}><a> Committee on Publication Ethics</a></Link>. All
+                                <Link href={'https://publicationethics.org/'}><span> Committee on Publication Ethics</span></Link>. All
                                 submitted articles will undergo a Similarity Index checking process using Turnitin or any
                                 other appropriate software. Turnitin checks submissions against millions of published articles,
-                                and billions of web contents. Authors can use <Link href={'http://www.als-journal.com/wp-admin/turnitin.com'}><a> Turnitin</a></Link> to 
+                                and billions of web contents. Authors can use <Link href={'http://www.als-journal.com/wp-admin/turnitin.com'}><span> Turnitin</span></Link> to 
                         screen their work before submission. If the total Similarity Index is {'>'}19% or any single 
                         source has similarity index {'>'}5%, the manuscript is liable to be rejected. </strong>
                             </div>
@@ -173,7 +173,7 @@ const authors_guide = () => {
                             <label className='colpsedown' htmlFor="trigger7">Manuscript Preparation and Submission</label>
                             <div><strong>
                                 Manuscript completed in all respects be submitted directly to the Editor-in-Chief/Editor
-                                <Link href={'mailto: editor@ijvets.com'}><a> (editor@ijvets.com)</a></Link> for quick publication processes.
+                                <Link href={'mailto: editor@ijvets.com'}><span> (editor@ijvets.com)</span></Link> for quick publication processes.
                                 Following files/documents are required at the time of submission: 1. Manuscript (MS Word or compatible) and 2.
                                 List of potential reviewers. <span style={{ color: "blue" }}> Potential reviewers: </span>
                                 At the time of submission, names of at least three potential reviewers (their designation,
@@ -241,12 +241,12 @@ const authors_guide = () => {
                             <input type="checkbox" id="trigger8" />
                             <label className='colpsedown' htmlFor="trigger8">Bioethics and Animal Use in Research</label>
                             <div><strong>
-                                <Link href={'https://www.ncbi.nlm.nih.gov/books/NBK500418/'}><a> Simmonds (2018)</a></Link>
+                                <Link href={'https://www.ncbi.nlm.nih.gov/books/NBK500418/'}><span> Simmonds (2018)</span></Link>
                                 explained in detail about the use of animals for research purpose and what bioethics have
                                 to be followed. For more detail read the article available at this
-                                <Link href={'https://www.ncbi.nlm.nih.gov/books/NBK500418/'}><a>  link</a></Link>. Furthermore,
+                                <Link href={'https://www.ncbi.nlm.nih.gov/books/NBK500418/'}><span>  link</span></Link>. Furthermore,
                                 oversight of animal use in biomedical activities has also been compiled by AAALAC International
-                                (<Link href={'https://www.ncbi.nlm.nih.gov/books/NBK500418/'}><a> AAALAC International 2015</a></Link>). Implementation
+                                (<Link href={'https://www.ncbi.nlm.nih.gov/books/NBK500418/'}><span> AAALAC International 2015</span></Link>). Implementation
                                 of ethical programs for the care and use of animals in biomedical activities requires
                                 buy-in from all members of an institution, from the highest-ranking administrators to the
                                 animal care and research staffs. The achievement of an ethical, legally compliant, and
@@ -261,7 +261,7 @@ const authors_guide = () => {
                                     Manuscripts submitted for publication must contain a statement to the effect that all
                                     human and animal studies have been approved by the appropriate ethics committee/institutional
                                     review board and have, therefore, been performed in accordance with the ethical standards
-                                    laid down in the <Link href={'https://www.wma.net/what-we-do/medical-ethics/declaration-of-helsinki/'}><a> 1964 Declaration of Helsinki</a></Link>
+                                    laid down in the <Link href={'https://www.wma.net/what-we-do/medical-ethics/declaration-of-helsinki/'}><span> 1964 Declaration of Helsinki</span></Link>
                                     and its later amendments.
                                 </label>
                             </strong>
@@ -291,7 +291,7 @@ const authors_guide = () => {
                                 of the IJVS will not be responsible. <span style={{ color: "blue" }}> Reprints</span>: No reprints
                                 will be supplied to authors. All articles are published with Open Access, hence freely available
                                 under Archive of the IJVS website (
-                                <Link href={'http://www.ijvets.com/archive/'}><a>http://www.ijvets.com/archive/</a></Link>),
+                                <Link href={'http://www.ijvets.com/archive/'}><span>http://www.ijvets.com/archive/</span></Link>),
                                 thus, can be downloaded without any cost/permission.</strong>
                             </div>
                         </div>
@@ -299,7 +299,7 @@ const authors_guide = () => {
                             <input type="checkbox" id="trigger11" />
                             <label className='colpsedown' htmlFor="trigger11">Conflict of interest</label>
                             <div><strong>
-                                <Link href={'https://en.wikipedia.org/wiki/Conflicts_of_interest'}><a>Conflicts of interest (COIs) </a></Link>
+                                <Link href={'https://en.wikipedia.org/wiki/Conflicts_of_interest'}><span>Conflicts of interest (COIs) </span></Link>
                                 if any, may cause wrongdoing and make it more likely. Ethical standards in academic publishing
                                 exist to avoid and deal with COIs. Standards vary between journals and are unevenly applied.
                                 According to the International Committee of Medical Journal Editors, “authors have a responsibility
@@ -365,8 +365,8 @@ const authors_guide = () => {
                                 the end-user and that is re-usable. By default, we publish these articles under a Creative
                                 Commons Attribution Non-Commercial (CC BY-NC 4.0) license that allows reuse subject only to the
                                 use being non-commercial and to the article being fully attributed (
-                                <Link href={'http://creativecommons.org/licenses/by-nc/4.0'}><a>http://creativecommons.org/licenses/by-nc/4.0</a></Link>). IJVS
-                                makes all open access articles freely available on <Link href={'https://www.ijvets.com/'}><a> https://www.ijvets.com/</a></Link> from
+                                <Link href={'http://creativecommons.org/licenses/by-nc/4.0'}><span>http://creativecommons.org/licenses/by-nc/4.0</span></Link>). IJVS
+                                makes all open access articles freely available on <Link href={'https://www.ijvets.com/'}><span> https://www.ijvets.com/</span></Link> from
                                 the date of publication. These articles are still protected by copyright but are made available under a Creative
                                 Commons. For all research articles except those funded by an organization that mandates CC-BY, the IJVS license
                                 allows reuse with complete citation of the origin of the article for non-commercial use only. For commercial use,
@@ -452,10 +452,10 @@ const authors_guide = () => {
                     <hr className="hrbgline"></hr>
                     <div className='row'>
                         <div className='col-lg-6'>
-                            <Link href={'/upload/Copyright Release Form.pdf'}><a>Author’s Guide</a></Link>
+                            <Link href={'/upload/Copyright Release Form.pdf'}><span>Author’s Guide</span></Link>
                         </div>
                         <div className='col-lg-6'>
-                            <Link href={'/upload/Copyright.docx'}><a>Copyright Release Form</a></Link>
+                            <Link href={'/upload/Copyright.docx'}><span>Copyright Release Form</span></Link>
                         </div>
                     </div>
                 </div>

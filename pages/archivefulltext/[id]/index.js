@@ -1,23 +1,11 @@
 import Link from 'next/link'
-// import React from 'react'
-import React, { useEffect, useState } from 'react'
 import FooterOne from '../../../components/Footer'
 import Htmltextright from '../../../components/htmltextright'
 import NavOne from '../../../components/NavBar'
 import Axios from "axios";
 import { apiUrl } from "../../../baseurl";
 
-const fulltext = () => {
-    const [archive, setArchive] = useState({});
-    const [departments, setDepartment] = useState([]);
-    const [reference, setReference] = useState([]);
-    useEffect(() => {
-        Axios.get(apiUrl() + "archive/singlefull/" + 1).then((response) => {
-            setArchive(response.data[0]);
-            setDepartment(response.data[0].departments.split("-"));
-            setReference(response.data[0].reference.split("---"));
-        });
-    }, []);
+const fulltext = ({archive,departments,reference}) => {
     setTimeout(() => {
         var currentView = parseInt(archive.views) + 1;
         Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
@@ -57,7 +45,7 @@ const fulltext = () => {
                         {archive.article_keywords}
                     </p>
                     <p><b>DOI: </b>
-                        <Link href={'archive.article_doi'}><a>{archive.article_doi}</a></Link>
+                        <Link href={'archive.article_doi'}><span>{archive.article_doi}</span></Link>
                     </p> 
                     <p>*Corresponding author: {archive.corresponding_email}</p>
                     <p>Copyright 2012 IJVS</p>
@@ -117,8 +105,8 @@ const fulltext = () => {
                 <span className='inpresstxtsiz'>
                     <div className='text-center'><b>REFERENCES</b></div>                    
                     <div className='text-justify'>
-                    {reference.map((val) => (
-                            <div>{val}</div>
+                    {reference.map((val,i) => (
+                            <div key={i}>{val}</div>
                         ))}
                         {/* {archive.reference} */}
                     </div>
@@ -126,7 +114,7 @@ const fulltext = () => {
                 <h1 className='h1fontsiz'>{archive.article_title}</h1>
             </div>
             <div className='col-lg-3'>
-                < Htmltextright />
+                < Htmltextright archive={archive} />
             </div>
         </div>
         <div>
@@ -136,4 +124,15 @@ const fulltext = () => {
   )
 }
 
+export async function getServerSideProps(context) {
+    const res = await fetch(apiUrl() + "archive/singlefull/" + context.query["id"])
+    const archive = await res.json();
+    var departments = [];
+    var reference = [];
+    if (archive != null) {
+        departments =archive.departments.split("-");
+        reference =archive.reference.split("---");
+    }
+    return { props: { archive, departments,reference } }
+}
 export default fulltext

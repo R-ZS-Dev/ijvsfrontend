@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from 'react'
 import FooterOne from '../../../components/Footer'
 import Htmltextright from '../../../components/htmltextright'
 import NavOne from '../../../components/NavBar'
 import Axios from "axios";
 import { apiUrl } from "../../../baseurl";
 
-const archiveabstract = () => {
-    const [archive, setArchive] = useState({});
-    const [department, setDepartment] = useState([]);
-    useEffect(() => {
-        Axios.get(apiUrl() + "archive/single/" + 1).then((response) => {
-            setArchive(response.data[0]);
-            setDepartment(response.data[0].departments.split("-"));
-        });
-    }, []);
-
+const archive = ({ archive, departments }) => {
     setTimeout(() => {
         var currentView = parseInt(archive.views) + 1;
         Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
@@ -31,7 +21,7 @@ const archiveabstract = () => {
                     <h2 className='h2fontsiz'>{archive.all_authors}</h2>
                     <h3 className='h3fontsiz'>
                         <span className='shorttextdepts'></span>
-                        {department.map((val, i) => (
+                        {departments.map((val, i) => (
                             <div key={i}><sup>{++i}</sup>{val}</div>
                         ))}
 
@@ -42,7 +32,7 @@ const archiveabstract = () => {
                     </span>
                 </div>
                 <div className='col-lg-3'>
-                    < Htmltextright />
+                    < Htmltextright archive={archive} />
                 </div>
             </div>
             <div>
@@ -51,5 +41,13 @@ const archiveabstract = () => {
         </>
     )
 }
-
-export default archiveabstract
+export async function getServerSideProps(context) {
+    const res = await fetch(apiUrl() + "archive/single/" + context.query["id"])
+    const archive = await res.json();
+    var departments = [];
+    if (archive != null) {
+        departments = archive.departments.split("-");
+    }
+    return { props: { archive, departments } }
+}
+export default archive

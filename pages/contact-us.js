@@ -22,15 +22,15 @@ const contact_us = () => {
                         <span>
                             <h6 className='ml-2'><strong>Affiliations:</strong></h6>
                             <ul>
-                                <li><Link href={'https://en.sdmy.edu.cn/info/1007/1310.htm'}><a>Shandong Vocational Animal Science and Veterinary College, Weifang, Shandong, China</a></Link></li>
-                                <li><Link href={'http://uaf.edu.pk/EmployeeDetail.aspx?userid=40'}><a>Ex-Dean, Faculty of Veterinary Science, University of Agricultue, Faisalabad, Pakistan</a></Link></li>
+                                <li><Link href={'https://en.sdmy.edu.cn/info/1007/1310.htm'}><span>Shandong Vocational Animal Science and Veterinary College, Weifang, Shandong, China</span></Link></li>
+                                <li><Link href={'http://uaf.edu.pk/EmployeeDetail.aspx?userid=40'}><span>Ex-Dean, Faculty of Veterinary Science, University of Agricultue, Faisalabad, Pakistan</span></Link></li>
                             </ul>
                         </span>
                         <span className='mt-3'>
                             <h6 className='ml-2'><strong>Phone:</strong> +92 333 6517844</h6>
                         </span>
                         <span className='mt-3'>
-                            <h6 className='ml-2'><strong>Email:</strong> <Link href={'mailto: editor@ijvets.com'}><a>editor@ijvets.com</a></Link></h6>
+                            <h6 className='ml-2'><strong>Email:</strong> <Link href={'mailto: editor@ijvets.com'}><span>editor@ijvets.com</span></Link></h6>
                             <div>
                                 <label htmlFor='' className='ml-2'>Send us your query anytime!</label>
                             </div>
@@ -42,7 +42,7 @@ const contact_us = () => {
                             </div>
                             <label htmlFor='' className='ml-2'><b>Phone:</b> +923336054000</label>
                             <div>
-                                <div className='ml-2'><strong>Email:</strong> <Link href={'mailto: proprietor@uniquescientificpublishers.com'}><a>proprietor@uniquescientificpublishers.com</a></Link>, <Link href={'mailto: abdulhannan720@gmail.com'}><a>abdulhannan720@gmail.com</a></Link></div>
+                                <div className='ml-2'><strong>Email:</strong> <Link href={'mailto: proprietor@uniquescientificpublishers.com'}><span>proprietor@uniquescientificpublishers.com</span></Link>, <Link href={'mailto: abdulhannan720@gmail.com'}><span>abdulhannan720@gmail.com</span></Link></div>
                             </div>
                         </span>
                     </div>

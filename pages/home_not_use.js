@@ -1,39 +1,41 @@
 import Image from "next/image"
 import Link from "next/link";
-import React, { useState, useEffect } from 'react';
 import Axios from "axios";
 import { apiUrl } from "../baseurl";
+// import { useState } from "react";
 
-const HeroSlider = () => {
-    const [index, setIndex] = useState(0);
-    const [homeList, setHomeList] = useState([1, 2, 3, 4]);
+const HeroSlider = ({homeList}) => {
+    // const [index, setIndex] = useState(0);
     // var homeList=[];
-    const array = ["/images/uploadsite/slide1.jpg", "/images/uploadsite/slide2.jpg", "/images/uploadsite/slide3.jpg",
-        "/images/uploadsite/slide4.jpg"]
-    function loop(count) {
-        if (count == array.length) {
-            return count = 0;
-        }
-        if (count < 0) {
-            return count = array.length - 1;
-        }
-        return count;
-    }
+    // const array = ["/images/uploadsite/slide1.jpg", "/images/uploadsite/slide2.jpg", "/images/uploadsite/slide3.jpg",
+    //     "/images/uploadsite/slide4.jpg"]
+    // function loop(count) {
+    //     if (count == array.length) {
+    //         return count = 0;
+    //     }
+    //     if (count < 0) {
+    //         return count = array.length - 1;
+    //     }
+    //     return count;
+    // }
 
-    useEffect(() => {
-        Axios.get(apiUrl() + "home/view").then((response) => {
-            setHomeList(response.data);
-        });
-        const interval = setInterval(() => setIndex(count => loop(count + 1)), 4000);
-        return () => clearInterval(interval);
-    }, []);
+    // useEffect(() => {
+    //     Axios.get(apiUrl() + "home/view").then((response) => {
+    //         setHomeList(response.data);
+    //     });
+    //     const interval = setInterval(() => setIndex(count => loop(count + 1)), 4000);
+    //     return () => clearInterval(interval);
+    // }, []);
+
+    // const interval = setInterval(() => setIndex(count => loop(count + 1)), 4000);
+        // return () => clearInterval(interval);
 
 
     return (
         <>
             <div className='mt-0'>
                 <div className=''>
-                    <Image src={array[index]} height={"400px"} width={'1000px'} layout="" alt='dead Image' />
+                    {/* <Image src={array[index]} height={"400"} width={'1000'} layout="" alt='dead Image' /> */}
                 </div>
             </div>
             <div className="homepagecont mt-2">
@@ -57,24 +59,24 @@ const HeroSlider = () => {
                 <div>
                     <h1 className="h3fontsiz text-center">Our Recent Articles</h1>
                     <hr className="hrbgline"></hr>
-                    {homeList.map((val, i) => (
+                    {/* {homeList.map((val, i) => (
                         <div className="ourarticle p-1" key={i}>
-                            <Link href={"/./upload/" + val.pdf_file} target="_blank"><a>
+                            <Link href={"/./upload/" + val.pdf_file} target="_blank"><span>
                                 <strong className="text-dark">{val.article_title}</strong>
                                 <div className="mt-0">
                                     <label className="text-dark">{val.all_authors}</label>
                                 </div>
                                 <label className="text-dark">{val.departments}</label>
-                            </a></Link>
-                            <label className="homdoi">DOI: <Link href={"/./upload/" + val.pdf_file} target="_blank"><a>{val.article_doi}</a></Link></label>
+                            </span></Link>
+                            <label className="homdoi">DOI: <Link href={"/./upload/" + val.pdf_file} target="_blank"><span>{val.article_doi}</span></Link></label>
                             <hr className="mt-1"></hr>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
 
                 <div className="openacc">
                     <div className="openacent p-2">
-                        <Image src="/images/uploadsite/openaccess.png" height={'50px'} width={'150px'} alt="IJVS" />
+                        <Image src="/images/uploadsite/openaccess.png" height={'50'} width={'150'} alt="IJVS" />
                     </div>
                 </div>
 
@@ -83,118 +85,134 @@ const HeroSlider = () => {
                 <div className="row mdivimgs">
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="https://www.scopus.com/sourceid/21100820608">
-                            <Image src="/images/uploadsite/scopus.jpg" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/scopus.jpg" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/publons.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/publons.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/cab.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/cab.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/cabi.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/cabi.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/sjr.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/sjr.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/Google-Scholar.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/Google-Scholar.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/agri-res.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/agri-res.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="http://creativecommons.org/licenses/by-nc/4.0/">
-                            <Image src="/images/uploadsite/ccc.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/ccc.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/drji.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/drji.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/ici.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/ici.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/International.jpg" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/International.jpg" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/open-access.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/open-access.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/ez.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/ez.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/Research-gate.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/Research-gate.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/sis.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/sis.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/Ulrichs.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/Ulrichs.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/jd.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/jd.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/road.jpg" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/road.jpg" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/wc.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/wc.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/base.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/base.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/lu.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/lu.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                     <div className="col-3 mt-1 sizimg">
                         <Link className="sizimgn" href="/">
-                            <Image src="/images/uploadsite/asi.png" height={'50px'} width={'150px'} alt="IJVS" />
+                            <Image src="/images/uploadsite/asi.png" height={'50'} width={'150'} alt="IJVS" />
                         </Link>
                     </div>
                 </div>
             </div>
         </>
     )
+}
+
+// export async function getServerSideProps() {
+//     const res = await fetch(apiUrl() + "archive/single/1");
+//     const homeList = await res.json();
+//     console.log('====================================');
+//     console.log(homeList);
+//     console.log('====================================');
+//     return { props: { homeList } }
+// }
+
+export async function getServerSideProps() {
+    const res = await fetch(apiUrl() + "home/view")
+    const homeList = await res.json();
+    console.log(homeList);
+    return { props: { homeList } }
 }
 
 export default HeroSlider

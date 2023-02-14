@@ -1,16 +1,11 @@
-import Axios from 'axios'
-import React, { useState } from 'react'
+// import Axios from 'axios'
+// import React, { useState } from 'react'
 import FooterOne from '../components/Footer'
 import NavOne from '../components/NavBar'
 import RightMenu from '../components/RightSide'
 import { apiUrl } from '../baseurl'
 
-const top_cited_articles = () => {
-
-    const [toptenlist, settopten] = useState([]);
-    Axios.get(apiUrl() + "topArtical/view").then((response) => {
-        settopten(response.data);
-    });
+const top_cited_articles = ({ toptenlist }) => {
     function expandView(key) {
         var currentObj = document.getElementsByClassName('abstractView')[key];
         var check = currentObj.classList.contains('expand');
@@ -43,8 +38,8 @@ const top_cited_articles = () => {
                                         <main>
                                             <input className="checktyp m-1" type="checkbox" />
                                             <label className="btn btn-info labclsd m-1" htmlFor="toggle" onClick={() => expandView(key)}>Abstract</label>
-                                            <button className='btn btn-info m-1'><a className='text-white' href={'/./upload/' + val.top_pdf}
-                                                target={"_blank"} download="">PDF</a></button>
+                                            <button className='btn btn-info m-1'><span className='text-white' href={'/./upload/' + val.top_pdf}
+                                                target={"_blank"} download="">PDF</span></button>
                                             <span className='text-primary m-1'><b>Citations: {val.top_citations}</b></span>
                                             <div className='bg-light text-justify expand abstractView' >
                                                 <span> {val.top_abstract}</span>
@@ -67,5 +62,9 @@ const top_cited_articles = () => {
         </>
     )
 }
-
+export async function getServerSideProps() {
+    const res = await fetch(apiUrl() + "topArtical/view")
+    const toptenlist = await res.json();
+    return { props: { toptenlist } }
+}
 export default top_cited_articles

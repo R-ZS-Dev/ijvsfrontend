@@ -60,7 +60,7 @@ const fulltext = () => {
                         Key Words Schistosoma mansoni, Gamma radiation, Cercarial antigen, ELISA, Serodiagnosis
                     </p>
                     <p><b>DOI: </b>
-                        <Link href={'https:/doi.org/10.17582/journal.pjz/20190301060337'}><a>https:/doi.org/10.17582/journal.pjz/20190301060337</a></Link>
+                        <Link href={'https:/doi.org/10.17582/journal.pjz/20190301060337'}><span>https:/doi.org/10.17582/journal.pjz/20190301060337</span></Link>
                     </p> 
                     <p>*Corresponding author: eman_naser612@hotmail.com</p>
                     <p>Copyright 2022 IJVS</p>
@@ -147,11 +147,11 @@ const fulltext = () => {
                         Abdel-Fattah, M.M., Al-Sherbiny, M., Osman, A., Sharmy, R. and Tsang, V., 2011. Improving the detection 
                         limit of quantitative diagnosis of anti-S. haematobium antibodies using Falcon Assay Screening Tet 
                         (FSAT) ELISA by developing a new standard curve. Parasitol. Res., 108: 1457-1463.
-                        <Link href={'https:/doi.org/10.1007/s00436-010-2198-y'}><a> https:/doi.org/10.1007/s00436-010-2198-y</a></Link>
+                        <Link href={'https:/doi.org/10.1007/s00436-010-2198-y'}><span> https:/doi.org/10.1007/s00436-010-2198-y</span></Link>
                     </div>
                     <div className='text-justify'>
                         Amin, M.A., Elsadig, A.M. and Osman, H.A., 2017. Evaluation of cathodic antigen urine tests for diagnosis of Schistosoma mansoni infection in Sudan. Saudi J. med. Sci., 5: 56-61.
-                        <Link href={'https:/doi.org/10.4103/1658-631X.194257'}><a> https:/doi.org/10.4103/1658-631X.194257</a></Link>
+                        <Link href={'https:/doi.org/10.4103/1658-631X.194257'}><span> https:/doi.org/10.4103/1658-631X.194257</span></Link>
                     </div>
                 </span>
                 <h1 className='h1fontsiz'>Assessment of the Diagnostic Performance of Normal and Irradiated Schistosoma mansoni Cercarial Antigens using ELISA</h1>

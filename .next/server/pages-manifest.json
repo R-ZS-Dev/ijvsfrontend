@@ -2,5 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/article-sub-form": "pages/article-sub-form.js"
+  "/submitmsg": "pages/submitmsg.js",
+  "/article-sub-form": "pages/article-sub-form.js",
+  "/": "pages/index.js",
+  "/archive": "pages/archive.js",
+  "/archivevolumeview/[id]": "pages/archivevolumeview/[id].js",
+  "/archivefigure/[id]": "pages/archivefigure/[id].js"
 }

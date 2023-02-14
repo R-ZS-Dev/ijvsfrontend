@@ -33,11 +33,11 @@ function usp() {
           <div className='usplogopageupstext'>
             <ol>
               <b>JOURNALS</b>
-              <li><Link href={'http://agrobiologicalrecords.com/'}><a>Agrobiological Records</a></Link></li>
+              <li><Link href={'http://agrobiologicalrecords.com/'}><span>Agrobiological Records</span></Link></li>
               <span>ISSN: 2708-7190 (online); 2708-7182 (print)</span>
-              <li><Link href={'http://ijvets.com/'}><a>International Journal of Veterinary Science</a></Link></li>
+              <li><Link href={'http://ijvets.com/'}><span>International Journal of Veterinary Science</span></Link></li>
               <span>ISSN: 2305-4360 (online); 2304-3075 (print)</span>
-              <li><Link href={'http://ijagbio.com/'}><a>International Journal of Agriculture and Biosciences</a></Link></li>
+              <li><Link href={'http://ijagbio.com/'}><span>International Journal of Agriculture and Biosciences</span></Link></li>
               <span>ISSN: 2306-3599 (online); 2305-6622 (print)</span>
             </ol>
           </div>
@@ -47,11 +47,11 @@ function usp() {
           <div className='usplogopageupstext'>
             <ol>
               <b>JOURNALS</b>
-              <li><Link href={'https://uniquescientificpublishers.com/veterinary-pathobiology-and-public-health/'}><a>Veterinary Pathobiology and Public Health</a></Link>(Published)</li>
+              <li><Link href={'https://uniquescientificpublishers.com/veterinary-pathobiology-and-public-health/'}><span>Veterinary Pathobiology and Public Health</span></Link>(Published)</li>
               <span>ISBN: 978-969-2201-00-1</span>
-              <li><Link href={'https://uniquescientificpublishers.com/animal-health-perspectives-volume-1/'}><a>Animal Health Perspectives</a></Link>(Published)</li>
+              <li><Link href={'https://uniquescientificpublishers.com/animal-health-perspectives-volume-1/'}><span>Animal Health Perspectives</span></Link>(Published)</li>
               <span>ISBN: 978-969-2201-01-8</span>
-              <li><Link href={'/'}><a>One Health Triad</a></Link>(Under process)</li>
+              <li><Link href={'/'}><span>One Health Triad</span></Link>(Under process)</li>
               <span>ISBN: Applied</span>
             </ol>
           </div>
@@ -61,8 +61,8 @@ function usp() {
           <div className='usplogopageupstext p-2'>
             <span>Unique Scientific Publishers, Faisalabad, Pakistan.</span>
             <p>Phone: +923336517844</p>
-            <span><strong>Email: </strong> <Link href={'mailto: ahrar1122@yahoo.com'}><a>ahrar1122@yahoo.com</a></Link></span>
-            <p><strong>Email: </strong> <Link href={'mailto: abdulhannan720@gmail.com'}><a>abdulhannan720@gmail.com</a></Link></p>
+            <span><strong>Email: </strong> <Link href={'mailto: ahrar1122@yahoo.com'}><span>ahrar1122@yahoo.com</span></Link></span>
+            <p><strong>Email: </strong> <Link href={'mailto: abdulhannan720@gmail.com'}><span>abdulhannan720@gmail.com</span></Link></p>
           </div>
         </div>
         <div className='col-lg-3'>

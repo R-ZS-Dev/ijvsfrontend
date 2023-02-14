@@ -2,17 +2,9 @@ import React from 'react'
 import FooterOne from '../components/Footer'
 import NavOne from '../components/NavBar'
 import RightMenu from '../components/RightSide'
-import { useState } from "react";
-import Axios from "axios";
-import { apiUrl } from '../baseurl';
+import { apiUrl, imgUrl } from '../baseurl';
 
-function in_press() {
-
-    const [employeeList, setEmployeeList] = useState([]);
-    Axios.get(apiUrl() + "inpress/view").then((response) => {
-        setEmployeeList(response.data);
-    });
-
+function in_press({ employeeList }) {
     function expandView(key) {
         var currentObj = document.getElementsByClassName('abstractView')[key];
         var check = currentObj.classList.contains('expand');
@@ -35,18 +27,18 @@ function in_press() {
                                 <div className='b-1' key={key}>
                                     <span>
                                         <span className='topinpresshead'>{val.inpress_title}</span>
-                                        <label htmlFor='' className='inpresstxtsiz'>{val.inp_co_authors_names}</label>
+                                        <label className='inpresstxtsiz'>{val.inp_co_authors_names}</label>
                                     </span>
                                     <span>
                                         <main>
                                             <input className="checkty m-1" type="checkbox" />
                                             <label htmlFor='toggle' className="btn btn-info labclsd m-1" onClick={() => expandView(key)}>Abstract</label>
-                                            <button className='btn btn-info m-1'> <a className='text-white'
-                                                href={"/./upload/" + val.inpress_pdf}
-                                                target="_blank">PDF</a> </button>
+                                            <button className='btn btn-info m-1'> <span className='text-white'
+                                                href={imgUrl() + val.inpress_pdf}
+                                            >PDF</span> </button>
                                             <div className='bg-light text-justify abstractView expand'>
                                                 <span> {val.inpress_abstract}</span>
-                                                <label htmlFor=''><strong>Keywords: </strong>{val.inpress_keywords}</label>
+                                                <label ><strong>Keywords: </strong>{val.inpress_keywords}</label>
                                             </div>
                                         </main>
                                     </span>
@@ -62,6 +54,12 @@ function in_press() {
             <FooterOne />
         </>
     )
+}
+
+export async function getServerSideProps() {
+    const res = await fetch(apiUrl() + "inpress/view")
+    const employeeList = await res.json();
+    return { props: { employeeList } }
 }
 
 export default in_press

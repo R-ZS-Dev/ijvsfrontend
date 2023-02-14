@@ -6,20 +6,23 @@ import Link from 'next/link'
 import Axios from "axios";
 import { apiUrl } from "../baseurl";
 
-function submission() {
-    const [Login, setLogin] = useState({email: "",password:""});
-    function formHandle(e){
-        setLogin({...Login, [e.target.name]: e.target.value});
+function submission({ email, password }) {
+    function formHandle(e) {
+        if (e.target.name == "email") {
+            email = e.target.value;
+        } else {
+            password = e.target.value;
+        }
     }
-    function loginBtn (){
-        const res = Axios.post(apiUrl() + "userLogin/login",{
-            email: Login.email,
-            password: Login.password
+    function loginBtn() {
+        const res = Axios.post(apiUrl() + "userLogin/login", {
+            email: email,
+            password: password
         }).then(r => {
-            if(r.data.message){
+            if (r.data.message) {
                 localStorage.setItem('loginId', r.data.loginid);
-                window.location='article-sub-form';
-            }else{
+                window.location = 'article-sub-form';
+            } else {
                 alert("Invalid login");
             }
         });
@@ -55,21 +58,21 @@ function submission() {
                                             <div className="auth-form-light text-left py-5 px-4 px-sm-5">
                                                 <h6 className="font-weight-light">Sign in to continue.</h6>
                                                 {/* <form className="pt-3" action='' method='POST'> */}
-                                                    <div className="form-group">
-                                                        <input type="email" name="email" onChange={formHandle} className="form-control form-control-lg" placeholder="Enter Email" />
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <input type="password" name="password" onChange={formHandle} className="form-control form-control-lg" placeholder="Password" />
-                                                    </div>
-                                                    <div className="mt-3">
-                                                        <button  className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" onClick={loginBtn} >SIGN IN</button>
-                                                    </div>
-                                                    <div className="my-2 d-flex justify-content-between align-items-center">
-                                                        <a href="userforpass" className="auth-link text-black">Forgot password?</a>
-                                                    </div>
-                                                    <div className="text-center mt-4 font-weight-light">
-                                                        Dont have an account? <a href="userregistration" className="text-primary">Create</a>
-                                                    </div>
+                                                <div className="form-group">
+                                                    <input type="email" name="email" onChange={formHandle} className="form-control form-control-lg" placeholder="Enter Email" />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="password" name="password" onChange={formHandle} className="form-control form-control-lg" placeholder="Password" />
+                                                </div>
+                                                <div className="mt-3">
+                                                    <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" onClick={loginBtn} >SIGN IN</button>
+                                                </div>
+                                                <div className="my-2 d-flex justify-content-between align-items-center">
+                                                    <span href="userforpass" className="auth-link text-black">Forgot password?</span>
+                                                </div>
+                                                <div className="text-center mt-4 font-weight-light">
+                                                    Dont have an account? <span href="userregistration" className="text-primary">Create</span>
+                                                </div>
                                                 {/* </form> */}
                                             </div>
                                         </div>
@@ -81,7 +84,7 @@ function submission() {
                     <div className='archbrder p-2 bg-light mt-3'>
                         <b>If user have any Query Contact us via Email</b>
                         <div className='archartic mt-1'>
-                            <Link href={'mailto: editor@ijvets.com'}><a>editor@ijvets.com</a></Link>
+                            <Link href={'mailto: editor@ijvets.com'}><span>editor@ijvets.com</span></Link>
                         </div>
                     </div>
                 </div>
@@ -95,5 +98,9 @@ function submission() {
         </>
     )
 }
-
+export async function getServerSideProps() {
+    const email = "";
+    const password = "";
+    return { props: { email, password } }
+}
 export default submission

@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['adminijvs.agrobiologicalrecords.com','localhost']
+  }
 }
+
 
 module.exports = nextConfig
