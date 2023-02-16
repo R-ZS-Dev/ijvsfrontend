@@ -30,30 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/archive": [
+    "/archivefulltext/[id]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/archive.js"
-    ],
-    "/archivefigure/[id]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/archivefigure/[id].js"
-    ],
-    "/archivevolumeview/[id]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/archivevolumeview/[id].js"
-    ],
-    "/article-sub-form": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/article-sub-form.js"
-    ],
-    "/submitmsg": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/submitmsg.js"
+      "static/chunks/pages/archivefulltext/[id].js"
     ]
   },
   "ampFirstPages": []

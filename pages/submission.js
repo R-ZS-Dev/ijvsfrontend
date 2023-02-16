@@ -67,9 +67,9 @@ function submission({ email, password }) {
                                                 <div className="mt-3">
                                                     <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" onClick={loginBtn} >SIGN IN</button>
                                                 </div>
-                                                <div className="my-2 d-flex justify-content-between align-items-center">
+                                                {/* <div className="my-2 d-flex justify-content-between align-items-center">
                                                     <span href="userforpass" className="auth-link text-black">Forgot password?</span>
-                                                </div>
+                                                </div> */}
                                                 <div className="text-center mt-4 font-weight-light">
                                                     Dont have an account? <span href="userregistration" className="text-primary">Create</span>
                                                 </div>

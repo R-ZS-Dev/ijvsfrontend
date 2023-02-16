@@ -4,7 +4,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa";
 
-function FooterOne() {
+function FooterOne({site_vistor}) {
     return (
         <>
             {/* <section id="footer"> */}
@@ -44,7 +44,7 @@ function FooterOne() {
                         <div className="col-xs-12 col-sm-3 col-md-3 mt-5">
                             <h5>Visitors</h5>
                             <ul className="list-unstyled quick-links">
-                                <li><span className="text-light">Number</span></li>
+                                <li><span className="text-light">{site_vistor ?? 0}</span></li>
                             </ul>
                         </div>
                     </div>

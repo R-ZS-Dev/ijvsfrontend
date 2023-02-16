@@ -5,14 +5,23 @@ import { apiUrl } from "../baseurl"
 import FooterOne from "../components/Footer"
 import NavOne from "../components/NavBar"
 import RightMenu from "../components/RightSide"
-
-
+import Axios from "axios";
 
 const Home = ({ homeList }) => {
   const [curIndex, setCurIndex] = useState(0);
+  const [checkVistorReq, setcheckVistorReq] = useState(true);
 
   const array = ["/images/uploadsite/slide1.jpg", "/images/uploadsite/slide2.jpg", "/images/uploadsite/slide3.jpg",
     "/images/uploadsite/slide4.jpg"];
+  // setTimeout(() => {
+  //   if (checkVistorReq) {
+  //     Axios.get(apiUrl() + "sitevisitor/newVistor").then((response) => {
+  //       console.log("yes");
+  //       setcheckVistorReq(false);
+  //     });
+  //   }
+
+  // }, 5000);
   return (
     <>
       <div>
@@ -47,21 +56,24 @@ const Home = ({ homeList }) => {
               <h1 className="h3fontsiz text-center">Our Recent Articles</h1>
               <hr className="hrbgline"></hr>
               {homeList.map((val, i) => (
-                <div className="ourarticle p-1" key={i}>
-                  <Link href={"/./upload/" + val.pdf_file} target="_blank"><span>
-                    <strong className="text-dark">{val.article_title}</strong>
-                    <div className="mt-0">
-                      <label className="text-dark">{val.all_authors}</label>
-                    </div>
-                    <label className="text-dark">{val.departments}</label>
-                  </span></Link>
-                  <label className="homdoi">DOI: <Link href={"/./upload/" + val.pdf_file} target="_blank"><span>{val.article_doi}</span></Link></label>
-                  <hr className="mt-1"></hr>
+                <div className="mt-3">
+                  <div className="ourarticle p-1" key={i}>
+                    <Link href={"/./upload/" + val.pdf_file} target="_blank"><span>
+                      <strong className="text-dark">{val.article_title}</strong>
+                      <div className="mt-0">
+                        <label className="text-dark">{val.all_authors}</label>
+                      </div>
+                      <label className="text-dark">{val.departments}</label>
+                    </span></Link>
+                    <label className="homdoi">DOI: <Link href={"/./upload/" + val.pdf_file} target="_blank"><span>{val.article_doi}</span></Link></label>
+                    <hr className="mt-1"></hr>
+
+                  </div>
                 </div>
               ))}
             </div>
 
-            <div className="openacc">
+            <div className="openacc mt-3">
               <div className="openacent p-2">
                 <Image src="/images/uploadsite/openaccess.png" height={'50'} width={'150'} alt="IJVS" />
               </div>
@@ -194,6 +206,7 @@ const Home = ({ homeList }) => {
   )
 }
 export async function getServerSideProps() {
+  const vistor_add = await fetch(apiUrl() + "sitevisitor/newVistor");
   const res = await fetch(apiUrl() + "home/view")
   const homeList = await res.json();
   return { props: { homeList } }
