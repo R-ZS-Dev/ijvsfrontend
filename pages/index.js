@@ -59,8 +59,8 @@ const Home = ({ homeList, total_vistor }) => {
               <h1 className="h3fontsiz text-center">Our Recent Articles</h1>
               <hr className="hrbgline"></hr>
               {homeList.map((val, i) => (
-                <div className="mt-3">
-                  <div className="ourarticle p-1" key={i}>
+                <div className="mt-3" key={i}>
+                  <div className="ourarticle p-1">
                     <Link href={"/./upload/" + val.pdf_file} target="_blank"><span>
                       <strong className="text-dark">{val.article_title}</strong>
                       <div className="mt-0">

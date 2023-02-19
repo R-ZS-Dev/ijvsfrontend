@@ -1,106 +1,105 @@
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/_app";
-exports.ids = ["pages/_app"];
+exports.id = 888;
+exports.ids = [888];
 exports.modules = {
 
-/***/ "./pages/_app.js":
-/*!***********************!*\
-  !*** ./pages/_app.js ***!
-  \***********************/
+/***/ 8484:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/globals.css */ \"./styles/globals.css\");\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_globals_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_navcss_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/navcss.css */ \"./styles/navcss.css\");\n/* harmony import */ var _styles_navcss_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_navcss_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _styles_rightsidebtn_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/rightsidebtn.css */ \"./styles/rightsidebtn.css\");\n/* harmony import */ var _styles_rightsidebtn_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_rightsidebtn_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _styles_bootstrap_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/bootstrap.css */ \"./styles/bootstrap.css\");\n/* harmony import */ var _styles_bootstrap_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_bootstrap_css__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _styles_footercss_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/footercss.css */ \"./styles/footercss.css\");\n/* harmony import */ var _styles_footercss_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_footercss_css__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _styles_dropdown_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/dropdown.css */ \"./styles/dropdown.css\");\n/* harmony import */ var _styles_dropdown_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_dropdown_css__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var _styles_inpress_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/inpress.css */ \"./styles/inpress.css\");\n/* harmony import */ var _styles_inpress_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_inpress_css__WEBPACK_IMPORTED_MODULE_7__);\n\n\n\n\n\n\n\n\nfunction MyApp({ Component , pageProps  }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n        ...pageProps\n    }, void 0, false, {\n        fileName: \"E:\\\\NextJs\\\\ijvsfrontend\\\\pages\\\\_app.js\",\n        lineNumber: 11,\n        columnNumber: 7\n    }, this);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9fYXBwLmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFBOEI7QUFDRDtBQUNNO0FBQ0g7QUFDQTtBQUNEO0FBQ0Q7QUFFOUIsU0FBU0EsTUFBTSxFQUFFQyxVQUFTLEVBQUVDLFVBQVMsRUFBRSxFQUFFO0lBQ3ZDLHFCQUNJLDhEQUFDRDtRQUFXLEdBQUdDLFNBQVM7Ozs7OztBQUU5QjtBQUVBLGlFQUFlRixLQUFLQSxFQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZmlyc3RfdGVtcGxhdGUvLi9wYWdlcy9fYXBwLmpzP2UwYWQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICcuLi9zdHlsZXMvZ2xvYmFscy5jc3MnXG5pbXBvcnQgJy4uL3N0eWxlcy9uYXZjc3MuY3NzJ1xuaW1wb3J0ICcuLi9zdHlsZXMvcmlnaHRzaWRlYnRuLmNzcydcbmltcG9ydCAnLi4vc3R5bGVzL2Jvb3RzdHJhcC5jc3MnXG5pbXBvcnQgJy4uL3N0eWxlcy9mb290ZXJjc3MuY3NzJ1xuaW1wb3J0ICcuLi9zdHlsZXMvZHJvcGRvd24uY3NzJ1xuaW1wb3J0ICcuLi9zdHlsZXMvaW5wcmVzcy5jc3MnXG5cbmZ1bmN0aW9uIE15QXBwKHsgQ29tcG9uZW50LCBwYWdlUHJvcHMgfSkge1xuICByZXR1cm4gKFxuICAgICAgPENvbXBvbmVudCB7Li4ucGFnZVByb3BzfSAvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IE15QXBwXG4iXSwibmFtZXMiOlsiTXlBcHAiLCJDb21wb25lbnQiLCJwYWdlUHJvcHMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/_app.js\n");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6764);
+/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_globals_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _styles_navcss_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3938);
+/* harmony import */ var _styles_navcss_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_navcss_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styles_rightsidebtn_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5841);
+/* harmony import */ var _styles_rightsidebtn_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_rightsidebtn_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_bootstrap_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7753);
+/* harmony import */ var _styles_bootstrap_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_bootstrap_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_footercss_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6361);
+/* harmony import */ var _styles_footercss_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_footercss_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _styles_dropdown_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3678);
+/* harmony import */ var _styles_dropdown_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_dropdown_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _styles_inpress_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4282);
+/* harmony import */ var _styles_inpress_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_inpress_css__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+
+
+
+
+
+function MyApp({ Component , pageProps  }) {
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
+        ...pageProps
+    });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);
+
 
 /***/ }),
 
-/***/ "./styles/bootstrap.css":
-/*!******************************!*\
-  !*** ./styles/bootstrap.css ***!
-  \******************************/
+/***/ 7753:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ "./styles/dropdown.css":
-/*!*****************************!*\
-  !*** ./styles/dropdown.css ***!
-  \*****************************/
+/***/ 3678:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ "./styles/footercss.css":
-/*!******************************!*\
-  !*** ./styles/footercss.css ***!
-  \******************************/
+/***/ 6361:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ "./styles/globals.css":
-/*!****************************!*\
-  !*** ./styles/globals.css ***!
-  \****************************/
+/***/ 6764:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ "./styles/inpress.css":
-/*!****************************!*\
-  !*** ./styles/inpress.css ***!
-  \****************************/
+/***/ 4282:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ "./styles/navcss.css":
-/*!***************************!*\
-  !*** ./styles/navcss.css ***!
-  \***************************/
+/***/ 3938:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ "./styles/rightsidebtn.css":
-/*!*********************************!*\
-  !*** ./styles/rightsidebtn.css ***!
-  \*********************************/
+/***/ 5841:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ "react/jsx-dev-runtime":
-/*!****************************************!*\
-  !*** external "react/jsx-dev-runtime" ***!
-  \****************************************/
+/***/ 997:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("react/jsx-dev-runtime");
+module.exports = require("react/jsx-runtime");
 
 /***/ })
 
@@ -111,7 +110,7 @@ module.exports = require("react/jsx-dev-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("./pages/_app.js"));
+var __webpack_exports__ = (__webpack_exec__(8484));
 module.exports = __webpack_exports__;
 
 })();

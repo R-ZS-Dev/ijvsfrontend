@@ -1,6 +1,27 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/api/hello": "pages/api/hello.js",
+  "/authors-guide": "pages/authors-guide.html",
+  "/confirm-forget-pas": "pages/confirm-forget-pas.html",
+  "/contact-us": "pages/contact-us.html",
+  "/editorial-board": "pages/editorial-board.html",
+  "/submitmsg": "pages/submitmsg.html",
+  "/userforpass": "pages/userforpass.html",
+  "/usp": "pages/usp.html",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/archiveabstract/[id]": "pages/archiveabstract/[id].js",
+  "/archive": "pages/archive.js",
+  "/archivesearch/[search]": "pages/archivesearch/[search].js",
+  "/article-sub-form": "pages/article-sub-form.js",
+  "/home_not_use": "pages/home_not_use.js",
+  "/in-press": "pages/in-press.js",
+  "/": "pages/index.js",
+  "/submission": "pages/submission.js",
+  "/top-cited-articles": "pages/top-cited-articles.js",
+  "/userregistration": "pages/userregistration.js",
+  "/archivevolumeview/[id]": "pages/archivevolumeview/[id].js",
+  "/archivefigure/[id]": "pages/archivefigure/[id].js",
+  "/archivefulltext/[id]": "pages/archivefulltext/[id].js",
+  "/404": "pages/404.html"
 }
