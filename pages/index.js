@@ -1,18 +1,18 @@
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { apiUrl } from "../baseurl"
 import FooterOne from "../components/Footer"
 import NavOne from "../components/NavBar"
 import RightMenu from "../components/RightSide"
 import Axios from "axios";
 
-const Home = ({ homeList }) => {
-  const [curIndex, setCurIndex] = useState(0);
-  const [checkVistorReq, setcheckVistorReq] = useState(true);
+const Home = ({ homeList, total_vistor }) => {
+  // const [curIndex, setCurIndex] = useState(0);
+  // const [checkVistorReq, setcheckVistorReq] = useState(true);
 
-  const array = ["/images/uploadsite/slide1.jpg", "/images/uploadsite/slide2.jpg", "/images/uploadsite/slide3.jpg",
-    "/images/uploadsite/slide4.jpg"];
+  // const array = ["/images/uploadsite/slide1.jpg", "/images/uploadsite/slide2.jpg", "/images/uploadsite/slide3.jpg",
+  //   "/images/uploadsite/slide4.jpg"];
   // setTimeout(() => {
   //   if (checkVistorReq) {
   //     Axios.get(apiUrl() + "sitevisitor/newVistor").then((response) => {
@@ -22,6 +22,8 @@ const Home = ({ homeList }) => {
   //   }
 
   // }, 5000);
+
+ 
   return (
     <>
       <div>
@@ -31,7 +33,8 @@ const Home = ({ homeList }) => {
         <div className="col-lg-9">
           <div className='mt-0'>
             <div className=''>
-              <Image src={array[curIndex]} height={"400"} width={'1000'} layout="" alt='dead Image' />
+              {/* <Image src={array[curIndex]} height={"400"} width={'1000'} layout="" alt='dead Image' /> */}
+              <Image src={'/images/slider/slider_maker.gif'} height={"400"} width={'1000'} layout="" alt='dead Image' />
             </div>
           </div>
           <div className="homepagecont mt-2">
@@ -200,7 +203,7 @@ const Home = ({ homeList }) => {
         </div>
       </div>
       <div>
-        < FooterOne />
+        <FooterOne site_vistor={total_vistor.vistors} />
       </div>
     </>
   )
@@ -209,6 +212,9 @@ export async function getServerSideProps() {
   const vistor_add = await fetch(apiUrl() + "sitevisitor/newVistor");
   const res = await fetch(apiUrl() + "home/view")
   const homeList = await res.json();
-  return { props: { homeList } }
+
+  const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+  const total_vistor = await vistor_get.json();
+  return { props: { homeList, total_vistor } }
 }
 export default Home

@@ -10,11 +10,11 @@ const archive = ({ archive, departments }) => {
         window.location = '/archive'
     }
     // console.log(archive.id);
-    setTimeout(() => {
-        var currentView = parseInt(archive.views) + 1;
-        Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
-        });
-    }, 5000);
+    // setTimeout(() => {
+    //     var currentView = parseInt(archive.views) + 1;
+    //     Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
+    //     });
+    // }, 5000);
     // 
     // function nextprefun(val) {
     //     window.location='/archiveabstract/'+val
@@ -66,6 +66,10 @@ export async function getServerSideProps(context) {
     try {
         const res = await fetch(apiUrl() + "archive/single/" + getid);
         archive = await res.json();
+
+        var currentView = parseInt(archive.views) + 1;
+        Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
+        });
     } catch {
         archive = null;
     }

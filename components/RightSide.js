@@ -1,7 +1,18 @@
 import Image from "next/image"
 import Link from "next/link"
-
+import Axios from "axios";
+import { apiUrl } from "../baseurl";
+import { useState } from "react";
 function RightMenu() {
+    const [search, setSearch] = useState("");
+    function search_btn() {
+        window.location = '/archivesearch/' + search;
+    }
+
+    function event_handler(e) {
+        setSearch(e.target.value);
+    }
+
     return (
         <>
             <div className="row">
@@ -17,8 +28,8 @@ function RightMenu() {
                                 <div className="card-header">Search</div>
                                 <div className="card-body">
                                     <div className="input-group">
-                                        <input className="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                        <button className="btn btn-primary" id="button-search" type="button">Go!</button>
+                                        <input className="form-control" onChange={event_handler} type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                                        <button className="btn btn-primary" onClick={search_btn} id="button-search" type="button">Go!</button>
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +45,7 @@ function RightMenu() {
 
                         <div className="img_cls p-1 mt-2 bg-light">
                             <Link href='https://hjrs.hec.gov.pk/index.php?r=site%2Fresult&id=1001077#journal_result'><span>
-                            <Image src="/./images/uploadsite/HEC.jpg" height={'170'} width={'180'} alt="" />
+                                <Image src="/./images/uploadsite/HEC.jpg" height={'170'} width={'180'} alt="" />
                                 <h5 className="hrecj">HEC Recognized Journal</h5>
                                 <h5 className="ycat">(Y Category)</h5>
                             </span></Link>

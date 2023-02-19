@@ -6,11 +6,11 @@ import Axios from "axios";
 import { apiUrl } from "../../../baseurl";
 
 const fulltext = ({ archive, departments, reference, total_vistor }) => {
-    setTimeout(() => {
-        var currentView = parseInt(archive.views) + 1;
-        Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
-        });
-    }, 5000);
+    // setTimeout(() => {
+    //     var currentView = parseInt(archive.views) + 1;
+    //     Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
+    //     });
+    // }, 5000);
 
    
     return (
@@ -140,6 +140,9 @@ export async function getServerSideProps(context) {
     if (archive != null) {
         departments = archive.departments.split("-");
         reference = archive.reference.split("---");
+        var currentView = parseInt(archive.views) + 1;
+        Axios.get(apiUrl() + "archive/view/plus/" + archive.id + "/" + currentView).then((response) => {
+        });
     }
     return { props: { archive, departments, reference, total_vistor } }
 }
