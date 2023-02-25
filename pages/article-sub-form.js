@@ -5,7 +5,7 @@ import RightMenu from '../components/RightSide'
 import Axios from "axios";
 import { apiUrl } from "../baseurl";
 
-const articlesubform = ({ article_title, co_author_email, dept, abstract, keywords, errorMsg, pdfFile, docxFile }) => {
+const articlesubform = ({ article_title, co_author_email, dept, abstract, keywords, errorMsg, pdfFile, docxFile, total_vistor }) => {
     function handleChangeValue(e){
         let curName=e.target.name;
         let curValue=e.target.value;
@@ -31,7 +31,7 @@ const articlesubform = ({ article_title, co_author_email, dept, abstract, keywor
 
     const submit_article = () => {
         if (localStorage.getItem('loginId') !== null) {
-            if (article_title == "" || pdfFile == null || docxFile == null) {
+            if (article_title == "" || co_author_email == "" ||dept == "" || abstract == "" || keywords == "" || pdfFile == null || docxFile == null) {
                alert("All Field requrired");
                 return false;
             }
@@ -86,37 +86,37 @@ const articlesubform = ({ article_title, co_author_email, dept, abstract, keywor
                     <div className="row">
                         <div className="col">
                             <span><b>Article Title</b></span>
-                            <input type="text" name="article_title" onChange={handleChangeValue} required="" className="form-control" placeholder="Enter Article Title..." />
+                            <input type="text" name="article_title" onChange={handleChangeValue} className="form-control" placeholder="Enter Article Title..." />
                         </div>
                     </div>
                     <div className="row mt-1">
                         <div className="col">
                             <span><b>Corresponding Email</b></span>
-                            <input type="email" onChange={handleChangeValue} name="co_author_email" required="" className="form-control" placeholder="Enter Article Authors..." />
+                            <input type="email" onChange={handleChangeValue} name="co_author_email" className="form-control" placeholder="Enter Article Authors..." />
                         </div>
                     </div>
                     <div className="form-group mt-1">
                         <span ><b>Department/Affiliation</b></span>
-                        <textarea onChange={handleChangeValue} name="dept" className="form-control" required="" rows="3"></textarea>
+                        <textarea onChange={handleChangeValue} name="dept" className="form-control" rows="3"></textarea>
                     </div>
                     <div className="form-group mt-1">
                         <span><b>Abstract</b></span>
-                        <textarea className="form-control" name="abstract" onChange={handleChangeValue} required="" rows="5"></textarea>
+                        <textarea className="form-control" name="abstract" onChange={handleChangeValue} rows="5"></textarea>
                     </div>
                     <div className="row">
                         <div className="col-lg-12 mt-1">
                             <span><b>Keywords</b></span>
-                            <input type="text" name="keywords" onChange={handleChangeValue} className="form-control" required="" placeholder="Enter Keywords" />
+                            <input type="text" name="keywords" onChange={handleChangeValue} className="form-control" placeholder="Enter Keywords" />
                         </div>
                     </div>
                     <div className='row'>
                         <div className="form-group mt-1 col-6">
                             <span><b>Upload MS Word File</b></span>
-                            <input type="file" name='ms_file' onChange={pdfFileChange} className="form-control-file" required="" />
+                            <input type="file" name='ms_file' onChange={pdfFileChange} className="form-control-file" />
                         </div>
                         <div className="form-group mt-1 col-6">
                             <span><b>Upload Potential Reviewer</b></span>
-                            <input type="file" name='potential_reviewer' onChange={docxFileChange} className="form-control-file" required="" />
+                            <input type="file" name='potential_reviewer' onChange={docxFileChange} className="form-control-file" />
                         </div>
                     </div>
                     <div>
@@ -129,15 +129,16 @@ const articlesubform = ({ article_title, co_author_email, dept, abstract, keywor
                 </div>
             </div>
             <div>
-                < FooterOne />
+                < FooterOne site_vistor={total_vistor.vistors} />
             </div>
         </>
     )
 }
 
 export async function getServerSideProps() {
-
-    return { props: { article_title: "", co_author_email: "", dept: "", abstract: "", keywords: "", errorMsg: "", pdfFile: null, docxFile: null } }
+    const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+    const total_vistor = await vistor_get.json();
+    return { props: { article_title: "", co_author_email: "", dept: "", abstract: "", keywords: "", pdfFile: null, docxFile: null, total_vistor, errorMsg: "" } }
 }
 
 export default articlesubform

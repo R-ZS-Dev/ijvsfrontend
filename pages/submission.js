@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import FooterOne from '../components/Footer'
 import NavOne from '../components/NavBar'
 import RightMenu from '../components/RightSide'
@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Axios from "axios";
 import { apiUrl } from "../baseurl";
 
-function submission({ email, password }) {
+function submission({ email, password, total_vistor }) {
     function formHandle(e) {
         if (e.target.name == "email") {
             email = e.target.value;
@@ -71,7 +71,7 @@ function submission({ email, password }) {
                                                     <span href="userforpass" className="auth-link text-black">Forgot password?</span>
                                                 </div> */}
                                                 <div className="text-center mt-4 font-weight-light">
-                                                    Dont have an account? <span href="userregistration" className="text-primary">Create</span>
+                                                    Dont have an account? <Link href="userregistration" className="text-primary">Create</Link>
                                                 </div>
                                                 {/* </form> */}
                                             </div>
@@ -93,14 +93,16 @@ function submission({ email, password }) {
                 </div>
             </div>
             <div className='mt-5'>
-                <FooterOne />
+                <FooterOne site_vistor={total_vistor.vistors} />
             </div>
         </>
     )
 }
 export async function getServerSideProps() {
+    const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+    const total_vistor = await vistor_get.json();
     const email = "";
     const password = "";
-    return { props: { email, password } }
+    return { props: { email, password, total_vistor } }
 }
 export default submission

@@ -25,7 +25,9 @@ const archivevolumeview = ({ archive, searchTxt }) => {
                 <div className='col-lg-9'>
                     <h2 className="text-center mt-0"><FaArrowLeft className="iconssizes mb-1" />{ searchTxt } <FaArrowRight className="iconssizes mb-1" /></h2>
                     <hr className="hrbgline"></hr>
-                    {archive.length == 0 ? 'Paper Not found' : ''}
+                    <div className='text-center text-danger'>
+                        <h2>{archive.length == 0 ? 'Paper Not Found' : ''}</h2>
+                    </div>
                     {archive.map((a, i) => (
                         <div key={i} className='inpressarticle p-2'>
                             <span className=''>

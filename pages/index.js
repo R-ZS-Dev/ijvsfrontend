@@ -22,7 +22,23 @@ const Home = ({ homeList, total_vistor }) => {
   //   }
 
   // }, 5000);
+  const [index, setIndex] = useState(0);
+  const array = ["/images/uploadsite/slide1.jpg", "/images/uploadsite/slide2.jpg", "/images/uploadsite/slide3.jpg",
+      "/images/uploadsite/slide4.jpg", "/images/uploadsite/slide5.jpg", "/images/uploadsite/slide6.jpg", "/images/uploadsite/slide7.jpg"]
+  function loop(count) {
+      if (count == array.length) {
+          return count = 0;
+      }
+      if (count < 0) {
+          return count = array.length - 1;
+      }
+      return count;
+  }
 
+  useEffect(() => {
+      const interval = setInterval(() => setIndex(count => loop(count + 1)), 4000);
+      return () => clearInterval(interval)
+  })
  
   return (
     <>
@@ -33,8 +49,8 @@ const Home = ({ homeList, total_vistor }) => {
         <div className="col-lg-9">
           <div className='mt-0'>
             <div className=''>
-              {/* <Image src={array[curIndex]} height={"400"} width={'1000'} layout="" alt='dead Image' /> */}
-              <Image src={'/images/slider/slider_maker.gif'} height={"400"} width={'1000'} layout="" alt='dead Image' />
+              <Image src={array[index]} height={"400"} width={'970'} alt='dead Image' />
+              {/* <Image src={'/images/slider/slider_maker.gif'} height={"400"} width={'1000'} alt='dead Image' /> */}
             </div>
           </div>
           <div className="homepagecont mt-2">

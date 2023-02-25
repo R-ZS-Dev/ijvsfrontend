@@ -3,8 +3,9 @@ import React from 'react'
 import FooterOne from '../components/Footer'
 import NavOne from '../components/NavBar'
 import RightMenu from '../components/RightSide'
+import { apiUrl } from "../baseurl"
 
-const contact_us = () => {
+const contact_us = ({ total_vistor }) => {
     return (
         <>
             <div>
@@ -52,10 +53,17 @@ const contact_us = () => {
                 </div>
             </div>
             <div className='mt-5'>
-                <FooterOne />
+                <FooterOne site_vistor={total_vistor.vistors} />
             </div>
         </>
     )
+}
+
+export async function getServerSideProps(context) {
+    const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+    const total_vistor = await vistor_get.json();
+        
+    return { props: { total_vistor } }
 }
 
 export default contact_us

@@ -4,7 +4,7 @@ import NavOne from '../components/NavBar'
 import RightMenu from '../components/RightSide'
 import { apiUrl, imgUrl } from '../baseurl';
 
-function in_press({ employeeList }) {
+function in_press({ employeeList, total_vistor }) {
     function expandView(key) {
         var currentObj = document.getElementsByClassName('abstractView')[key];
         var check = currentObj.classList.contains('expand');
@@ -51,15 +51,18 @@ function in_press({ employeeList }) {
                     <RightMenu />
                 </div>
             </div>
-            <FooterOne />
+            <FooterOne site_vistor={total_vistor.vistors}/>
         </>
     )
 }
 
 export async function getServerSideProps() {
+    const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+    const total_vistor = await vistor_get.json();
+
     const res = await fetch(apiUrl() + "inpress/view")
     const employeeList = await res.json();
-    return { props: { employeeList } }
+    return { props: { employeeList, total_vistor } }
 }
 
 export default in_press

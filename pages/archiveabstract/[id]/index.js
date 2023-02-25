@@ -5,7 +5,7 @@ import Axios from "axios";
 import { apiUrl } from "../../../baseurl";
 import Link from 'next/link';
 
-const archive = ({ archive, departments }) => {
+const archive = ({ archive, departments, total_vistor }) => {
     if (archive == null) {
         window.location = '/archive'
     }
@@ -53,7 +53,7 @@ const archive = ({ archive, departments }) => {
                         </div>
                     </div>
                     <div>
-                        < FooterOne />
+                        < FooterOne site_vistor={total_vistor.vistors} />
                     </div>
                 </din>
                 : ''}
@@ -61,6 +61,8 @@ const archive = ({ archive, departments }) => {
     )
 }
 export async function getServerSideProps(context) {
+    const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+    const total_vistor = await vistor_get.json();
     var getid = context.query["id"];
     var archive = null;
     try {
@@ -78,6 +80,6 @@ export async function getServerSideProps(context) {
     if (archive != null) {
         departments = archive.departments.split("-");
     }
-    return { props: { archive, departments } }
+    return { props: { archive, departments, total_vistor } }
 }
 export default archive

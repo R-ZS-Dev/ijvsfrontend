@@ -5,7 +5,7 @@ import RightMenu from '../components/RightSide'
 import Axios from "axios";
 import { apiUrl } from "../baseurl";
 
-const archive = ({ archive }) => {
+const archive = ({ archive, total_vistor }) => {
     return (
         <>
             <div>
@@ -42,16 +42,18 @@ const archive = ({ archive }) => {
                 </div>
             </div>
             <div>
-                <FooterOne />
+                <FooterOne site_vistor={total_vistor.vistors} />
             </div>
         </>
     )
 }
 
 export async function getServerSideProps() {
+    const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+    const total_vistor = await vistor_get.json();
     const res = await fetch(apiUrl() + "yearVolume/view")
     const archive = await res.json();
-    return { props: { archive } }
+    return { props: { archive, total_vistor } }
 }
 
 export default archive

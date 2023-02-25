@@ -5,7 +5,7 @@ import NavOne from '../components/NavBar'
 import RightMenu from '../components/RightSide'
 import { apiUrl } from '../baseurl'
 
-const top_cited_articles = ({ toptenlist }) => {
+const top_cited_articles = ({ toptenlist, total_vistor }) => {
     function expandView(key) {
         var currentObj = document.getElementsByClassName('abstractView')[key];
         var check = currentObj.classList.contains('expand');
@@ -57,14 +57,16 @@ const top_cited_articles = ({ toptenlist }) => {
                 </div>
             </div>
             <div className=''>
-                < FooterOne />
+                < FooterOne site_vistor={total_vistor.vistors } />
             </div>
         </>
     )
 }
 export async function getServerSideProps() {
+    const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+    const total_vistor = await vistor_get.json();
     const res = await fetch(apiUrl() + "topArtical/view")
     const toptenlist = await res.json();
-    return { props: { toptenlist } }
+    return { props: { toptenlist, total_vistor } }
 }
 export default top_cited_articles

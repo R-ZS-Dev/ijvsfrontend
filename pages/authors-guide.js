@@ -3,9 +3,9 @@ import Link from 'next/link'
 import NavOne from "../components/NavBar"
 import RightMenu from '../components/RightSide'
 import FooterOne from '../components/Footer'
-import Image from 'next/image'
+import { apiUrl } from "../baseurl"
 
-const authors_guide = () => {
+const authors_guide = ({ total_vistor }) => {
     return (
         <>
             <div>
@@ -464,10 +464,17 @@ const authors_guide = () => {
                 </div>
             </div>
             <div>
-                < FooterOne />
+                < FooterOne site_vistor={total_vistor.vistors} />
             </div>
         </>
     )
+}
+
+export async function getServerSideProps(context) {
+    const vistor_get = await fetch(apiUrl() + "sitevisitor/viewVistor/");
+    const total_vistor = await vistor_get.json();
+        
+    return { props: { total_vistor } }
 }
 
 export default authors_guide
