@@ -83,6 +83,7 @@ const articlesubform = ({ article_title, co_author_email, dept, abstract, keywor
             <div className="row p-4">
                 <div className="col-lg-9">
                     <p className="text-center">{errorMsg}</p>
+                    <h3 className='text-center'>Article Submission Form</h3>
                     <div className="row">
                         <div className="col">
                             <span><b>Article Title</b></span>
