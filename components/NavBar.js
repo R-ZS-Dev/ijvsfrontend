@@ -16,7 +16,7 @@ const NavOne = () => {
                                 <span className="textclr">I</span>nternational
                                 <span className="textclr"> J</span>ournal of
                                 <span className="textclr"> V</span>eterinary <span className="textclr">S</span>cience
-                                <p className="textclr1">e-ISSN: 2305-4360; p-ISSN: 2304-3075</p>
+                                <p className="textclr1 text-white">e-ISSN: 2305-4360; p-ISSN: 2304-3075</p>
                             </b>
                         </span>
                     </div>
